@@ -15,8 +15,7 @@ export default function Images(props) {
 
   return (
     <div>
-      <div>
-        <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
+      <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3">
         {images.map((image, i) => (
           <div className="col">
             <LazyLoadImage
@@ -29,7 +28,6 @@ export default function Images(props) {
             />
           </div>
         ))}
-        </div>
       </div>
 
       <div className="my-5">
