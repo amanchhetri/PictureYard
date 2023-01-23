@@ -22,7 +22,9 @@ function App() {
       await axios(
         `https://api.unsplash.com/${
           searchQuery !== "" ? "search/" : ""
-        }photos?client_id=Q-gxwD1qfV6JliGjFs7k_OKHIF6JffxpBWeWFo17IXY&query=${searchQuery}&per_page=${imagesPerPage}&page=${pageNumber}`
+        }photos?client_id=${
+          process.env.REACT_APP_UNSPLASH_API_KEY
+        }&query=${searchQuery}&per_page=${imagesPerPage}&page=${pageNumber}`
       ).then((res) => {
         searchQuery !== "" ? setImages(res.data.results) : setImages(res.data);
         setLoading(false);
